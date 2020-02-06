@@ -28,7 +28,7 @@ webpack
 
 下面是一些部分截图，功能比较多，就不多介绍了。交流学习，欢迎建议批评
 
-![](https://github.com/LOVINGFINE/finest_app/public/finest/1.png)
+![image](https://github.com/LOVINGFINE/finest_app/public/finest/1.png)
 
 ![](https://github.com/LOVINGFINE/finest_app/public/finest/2.png)
 
