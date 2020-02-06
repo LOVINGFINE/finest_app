@@ -28,21 +28,21 @@ webpack
 
 下面是一些部分截图，功能比较多，就不多介绍了。交流学习，欢迎建议批评
 
-![](public\images\finest\1.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/1.png)
 
-![](public\images\finest\2.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/2.png)
 
-![](public\images\finest\3.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/3.png)
 
-![](public\images\finest\4.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/4.png)
 
-![](public\images\finest\5.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/5.png)
 
-![](public\images\finest\6.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/6.png)
 
-![](public\images\finest\7.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/7.png)
 
-![](public\images\finest\8.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/8.png)
 
-![](public\images\finest\9.png)
+![](https://github.com/LOVINGFINE/finest_app/public/finest/9.png)
 
