@@ -50,7 +50,7 @@
                         <router-link to="/chapter/0" class="icon-chevron-thin-right"></router-link>
                     </div>
                 </div>
-                <div class="recommend">
+                <!-- <div class="recommend">
                     <h4 class="rec_title">相关推荐</h4>
                     <a href="#" @click.prevent="changeBook(item._id)" class="rec_item" v-for="(item,i) in rec_list"
                         :key="item._id" v-show="i<list_num">
@@ -64,7 +64,7 @@
                     <div class="rec_getmore" v-if="bottom_show">
                         <span :class="{'getmore':true,'icon-books':list_num==9}" @click="bottom_getmore">...</span>
                     </div>
-                </div>
+                </div> -->
                 <div class="bottom">
                     <div class="bottom_link" @click="addBooklist(book._id)">
                         <span class="icon-plus"></span>
@@ -130,24 +130,27 @@
                 this.show = false
                 this.title = '书籍详情'
                 let all = [
-                    this.$axios.get(`https://novel.juhe.im/book-info/${id}`),
-                    this.$axios.get(`https://novel.juhe.im/book-sources?view=summary&book=${id}`),
-                    this.$axios.get(`https://novel.juhe.im/recommend/${id}`)
+                    this.$axios.get(`/api/book/${id}`),
+                    this.$axios.get(`/api/post/review/by-book?book=${id}`)
                 ]
                 this.$axios.all(all).then(this.$axios.spread((a, b, c) => {
                     this.book = a.data
-                    this.rec_list = c.data.books
-                    this._id = b.data[0]._id
-                    this.getChp(b.data[0]._id)
+                    
+                    // console.log(a.data);
+                    this.show = true
+                    // this.rec_list = c.data.books
+                    // this._id = b.data[0]._id
+                    
+                    // 获取章节列表
+                    this.getChp(a.data._id)
                 }))
             },
             getChp(id) {
-                this.$axios.get(`https://novel.juhe.im/book-chapters/${id}`).then(res => {
-                    // console.log(res.data);
+                this.$axios.get(`/api/mix-atoc/${id}?view=chapters`).then(res => {
                     this.show = true
                     localStorage.setItem('book_list', JSON.stringify({
                         book: this.book,
-                        list: res.data.chapters,
+                        list: res.data.mixToc.chapters,
                         page:0
                     }))
                 })

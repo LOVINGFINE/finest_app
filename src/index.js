@@ -19,6 +19,7 @@ import class_box from './views/music/class/class_box.vue'
 import play from './components/header/play.vue'
 import song_box from './components/playBox/music/song_box.vue'
 import home_nav from './components/nav/home_nav.vue'
+// vant-ui 使用 
 import { Swipe, SwipeItem,Lazyload,Slider,PasswordInput,NumberKeyboard} from 'vant';
 Vue.use(Swipe).use(SwipeItem).use(Lazyload).use(Slider,{name:'van-slider'}).use(PasswordInput).use(NumberKeyboard)
 

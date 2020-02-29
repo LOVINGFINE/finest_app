@@ -21,7 +21,7 @@ export default {
    methods:{
       getData(i){
          let link = encodeURIComponent(this.list[i].link)
-         this.$axios.get(`${readAPI}/chapters/${link}`).then(res=>{
+         this.$axios.get(`/api2/chapter/${link}`).then(res=>{
               this.pic_list = res.data.chapter.cpContent.split('\n')
               this.title = res.data.chapter.title
               this.show = true

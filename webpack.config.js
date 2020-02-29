@@ -45,5 +45,21 @@ module.exports = {
             // "vue$":"vue/dist/vue.js"
         }
     },
-    devServer: {}
+    
+    devServer: {
+        proxy: {
+            '/api': {
+              target: 'https://api.zhuishushenqi.com/',
+              pathRewrite: {'^/api' : ''},
+              changeOrigin: true, 
+              secure: false,          // 设置支持https协议的代理
+            },
+            '/api2': {
+                target: 'https://chapter2.zhuishushenqi.com/',
+                pathRewrite: {'^/api2' : ''},
+                changeOrigin: true, 
+                secure: false,          // 设置支持https协议的代理
+              }
+        }
+    }        
 }

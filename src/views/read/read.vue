@@ -177,11 +177,14 @@
         methods: {
             getCat() {
                 let all = [
-                    this.$axios.get(`${readAPI}/category-info?gender=male&type=hot&major=奇幻&start=0&limit=10`),
-                    this.$axios.get(`${readAPI}/category-info?gender=female&type=hot&major=古代言情&start=0&limit=10`)
+                    this.$axios.get(`/api/book/by-categories?gender=male&type=hot&major=玄幻&minor=东方玄幻&start=0&limit=10`),
+                    this.$axios.get(`/api/book/by-categories?gender=female&type=hot&major=古代言情&minor=古代历史&start=0&limit=10`)
                 ]
 
                 this.$axios.all(all).then(this.$axios.spread((a, b, ) => {
+                    // 获取读书首页 男女分类 详情 展示数据
+                    console.log(b);
+                    
                     this.reads = {
                         list_1: a.data.books,
                         list_2: b.data.books

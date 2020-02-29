@@ -38,7 +38,7 @@
     },
     getSongUrl(state, url) {
         // 设置歌曲播放的地址
-        console.log(url);
+        // console.log(url);
         
         state.songUrl = url
     },

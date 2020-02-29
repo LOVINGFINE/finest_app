@@ -79,33 +79,42 @@
                     this.$axios.get(`${film.api_1}/v2/movie/weekly`),
                     this.$axios.get(`${film.api_1}/v2/movie/new_movies`)
                 ]
+                // 获取电影排行榜数据
                 this.$axios.all(all_1).then(this.$axios.spread((a, b, c, d) => {
                     localStorage.setItem('movie_rank', JSON.stringify({
                         top: a.data.subjects,
                         us: b.data.subjects,
                         weekly: c.data.subjects,
                         new: d.data.subjects
+                        //将排行榜 数据存入localstorage中缓存
                     }))
                 }))
                 let all = [
                     this.$axios.get(`${film.api_1}/v2/movie/in_theaters`),
                     this.$axios.get(`${film.api_1}/v2/movie/coming_soon`)
+                    // 获取电影热映，即将上映的数据
                 ]
                 this.$axios.all(all).then(this.$axios.spread((a, b) => {
                     localStorage.setItem('now', JSON.stringify(a.data))
                     localStorage.setItem('soon', JSON.stringify(b.data))
+                    // 存入localstorage
                 }))
             },
             getPerson(id) {
                 this.$axios.get(`${musicAPI}/user/detail?uid=${id}`).then(res => {
                     sessionStorage.setItem('person', JSON.stringify(res.data))
+                    // 获取登录信息，
                 })
             },
             getReadRank() {
-                this.$axios.get(`${readAPI}/rank/5a6844f8fc84c2b8efaa8bc5`).then(res => {
-                    localStorage.setItem('hot_read', JSON.stringify(res.data.ranking.books))
+                this.$axios.get(`/api/ranking/gender`).then(res => {
+                    console.log(res);
+                    
+                    localStorage.setItem('hot_read', JSON.stringify(res.data))
+                    // 获取读书排行榜数据 存入localstorage 中 方便后面使用
                 })
             },
+            // 播放器 播放更新方法
             _timeUpDate(e) {
                 this.$store.commit('setTime', event.target.currentTime)
                 if (this.$store.state.current < this.$store.state.songLrc.length - 1) {
@@ -127,13 +136,13 @@
             }
         },
         created() {
-                this.loginData()
+            this.loginData()
             this.getMusicList()
             this.getFilm()
             this.getReadRank()
         },
         mounted() {
-            this.$store.commit('setHeight', screen.availHeight)
+            this.$store.commit('setHeight', window.innerHeight)
             this.$store.commit('audioBox', this.$refs.box)
         }
     }

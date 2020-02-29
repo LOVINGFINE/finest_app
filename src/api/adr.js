@@ -7,4 +7,5 @@
         api_5:'https://douban.uieee.com'
     }
     export const musicAPI = 'http://an-fine.cn:3001'
-    export const readAPI = 'https://novel.juhe.im'
+    // api 代理
+    export const readAPI = '/api'

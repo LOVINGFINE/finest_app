@@ -166,7 +166,7 @@
         },
         methods: {
             getData(cat) {
-                this.$axios.get(`${readAPI}/sub-categories`).then(res => {
+                this.$axios.get(`${readAPI}/cats/lv2`).then(res => {
                     if (this.cat == 'male') {
                         this.title = '男生'
                         this.cat_list = res.data.male
@@ -196,7 +196,7 @@
                     this.body_show = false
                 }
                 this.$axios.get(
-                        `${readAPI}/category-info?gender=${this.cat}&type=hot&major=${major}&start=${this.start}&limit=${this.start+20}`)
+                        `/api/book/by-categories?gender=${this.cat}&type=hot&major=${major}&start=${this.start}&limit=${this.start+20}`)
                     .then(res => {
                         this.start = res.data.books.length
                         this.book_list.books = [...this.book_list.books, ...res.data.books]

@@ -24,25 +24,4 @@ yarn serve
 webpack
 ```
 
-如项目无法运行可能是某些第三方包源问题。
-
-下面是一些部分截图，功能比较多，就不多介绍了。交流学习，欢迎建议批评
-
-![image](./public/finest/1.png)
-
-![image](./public/finest/2.png)
-
-![image](./public/finest/3.png)
-
-![image](./public/finest/4.png)
-
-![image](./public/finest/5.png)
-
-![image](./public/finest/6.png)
-
-![image](./public/finest/7.png)
-
-![image](./public/finest/8.png)
-
-![image](./public/finest/9.png)
 
