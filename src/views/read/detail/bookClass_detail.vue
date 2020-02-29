@@ -196,7 +196,7 @@
                     this.body_show = false
                 }
                 this.$axios.get(
-                        `/api/book/by-categories?gender=${this.cat}&type=hot&major=${major}&start=${this.start}&limit=${this.start+20}`)
+                        `${readAPI}/book/by-categories?gender=${this.cat}&type=hot&major=${major}&start=${this.start}&limit=${this.start+20}`)
                     .then(res => {
                         this.start = res.data.books.length
                         this.book_list.books = [...this.book_list.books, ...res.data.books]

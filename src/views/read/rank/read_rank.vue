@@ -160,7 +160,7 @@ export default {
    },
    methods:{
        getData(){
-           this.$axios.get(`/api/ranking/gender`).then(res=>{
+           this.$axios.get(`${readAPI}/ranking/gender`).then(res=>{
                 this.all= [res.data.male,res.data.female,res.data.picture,res.data.epub]
                 this.id = res.data.male[0]._id
                 this.show = true
@@ -177,7 +177,7 @@ export default {
        },
        getList(id){
            this.view = false
-           this.$axios.get(`/api/ranking/${id}`).then(res=>{
+           this.$axios.get(`${readAPI}/ranking/${id}`).then(res=>{
                 this.books = res.data.ranking.books.slice(2)
                 this.view = true
            })

@@ -8,4 +8,6 @@
     }
     export const musicAPI = 'http://an-fine.cn:3001'
     // api 代理
-    export const readAPI = '/api'
+    export const readAPI = '/api' // 调试使用
+
+    // export const readAPI = 'http://api.zhuishushenqi.com' // 上线使用

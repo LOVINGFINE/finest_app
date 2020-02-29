@@ -107,8 +107,8 @@
                 })
             },
             getReadRank() {
-                this.$axios.get(`/api/ranking/gender`).then(res => {
-                    console.log(res);
+                this.$axios.get(`${readAPI}/ranking/gender`).then(res => {
+                    // console.log(res);
                     
                     localStorage.setItem('hot_read', JSON.stringify(res.data))
                     // 获取读书排行榜数据 存入localstorage 中 方便后面使用

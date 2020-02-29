@@ -183,7 +183,7 @@
 
                 this.$axios.all(all).then(this.$axios.spread((a, b, ) => {
                     // 获取读书首页 男女分类 详情 展示数据
-                    console.log(b);
+                    // console.log(b);
                     
                     this.reads = {
                         list_1: a.data.books,
@@ -206,7 +206,7 @@
                 this.reads = read
                 this.show = true
             }
-            console.log(this.reads);
+            // console.log(this.reads);
 
             this.$store.commit('setType', {
                 key: 3,

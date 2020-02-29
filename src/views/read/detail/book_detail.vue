@@ -88,6 +88,7 @@
     import {
         log
     } from 'util'
+import { readAPI } from '../../../api/adr'
     export default {
         data() {
             return {
@@ -130,8 +131,8 @@
                 this.show = false
                 this.title = '书籍详情'
                 let all = [
-                    this.$axios.get(`/api/book/${id}`),
-                    this.$axios.get(`/api/post/review/by-book?book=${id}`)
+                    this.$axios.get(`${readAPI}/book/${id}`),
+                    this.$axios.get(`${readAPI}/review/by-book?book=${id}`)
                 ]
                 this.$axios.all(all).then(this.$axios.spread((a, b, c) => {
                     this.book = a.data
@@ -146,7 +147,7 @@
                 }))
             },
             getChp(id) {
-                this.$axios.get(`/api/mix-atoc/${id}?view=chapters`).then(res => {
+                this.$axios.get(`${readAPI}/mix-atoc/${id}?view=chapters`).then(res => {
                     this.show = true
                     localStorage.setItem('book_list', JSON.stringify({
                         book: this.book,
