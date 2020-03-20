@@ -182,7 +182,7 @@ export default {
                }
                this.show = true
            }else{
-               this.$axios.get(`${film.api_1}/v2/movie/${type}`).then(res=>{
+               this.$axios.get(`${film}/v2/movie/${type}`).then(res=>{
                    
                })
            }  

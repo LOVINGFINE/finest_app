@@ -491,12 +491,12 @@
         },
         methods: {
             getData(id) {
-                this.$axios.get(`${film.api_1}/v2/movie/subject/${id}`).then(res => {
+                this.$axios.get(`${film}/v2/movie/subject/${id}`).then(res => {
                     this.message = res.data
                     this.show = true
                     // localStorage.setItem('f',JSON.stringify(res.data))
                 })
-                this.$axios.get(`${film.api_1}/v2/movie/subject/${id}/comments`).then(res => {
+                this.$axios.get(`${film}/v2/movie/subject/${id}/comments`).then(res => {
                     this.comments = res.data.comments
                     // localStorage.setItem('c',JSON.stringify(res.data.comments))    
                 })

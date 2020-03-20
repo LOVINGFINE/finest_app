@@ -132,7 +132,7 @@ import { readAPI } from '../../../api/adr'
                 this.title = '书籍详情'
                 let all = [
                     this.$axios.get(`${readAPI}/book/${id}`),
-                    this.$axios.get(`${readAPI}/review/by-book?book=${id}`)
+                    this.$axios.get(`${readAPI}/post/review/by-book?book=${id}`)
                 ]
                 this.$axios.all(all).then(this.$axios.spread((a, b, c) => {
                     this.book = a.data

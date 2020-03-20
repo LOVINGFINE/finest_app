@@ -355,10 +355,10 @@ import {film} from '../../api/adr.js'
             },
             getRank(){
                 let all = [
-                   this.$axios.get(`${film.api_1}/v2/movie/top250`),
-                   this.$axios.get(`${film.api_1}/v2/movie/us_box`),
-                   this.$axios.get(`${film.api_1}/v2/movie/weekly`),
-                   this.$axios.get(`${film.api_1}/v2/movie/new_movies`)
+                   this.$axios.get(`${film}/v2/movie/top250`),
+                   this.$axios.get(`${film}/v2/movie/us_box`),
+                   this.$axios.get(`${film}/v2/movie/weekly`),
+                   this.$axios.get(`${film}/v2/movie/new_movies`)
                 ]
                 this.$axios.all(all).then(this.$axios.spread((a,b,c,d)=>{
                     this.ranks = {top:a.data.subjects,us:b.data.subjects,weekly:c.data.subjects,new:d.data.subjects}

@@ -69,15 +69,15 @@
 
                 } else {
                     this.myApp = true
-                    this.$router.push('/selected')
+                    this.$router.push('/film')
                 }
             },
             getFilm() {
                 let all_1 = [
-                    this.$axios.get(`${film.api_1}/v2/movie/top250`),
-                    this.$axios.get(`${film.api_1}/v2/movie/us_box`),
-                    this.$axios.get(`${film.api_1}/v2/movie/weekly`),
-                    this.$axios.get(`${film.api_1}/v2/movie/new_movies`)
+                    this.$axios.get(`${film}/v2/movie/top250`),
+                    this.$axios.get(`${film}/v2/movie/us_box`),
+                    this.$axios.get(`${film}/v2/movie/weekly`),
+                    this.$axios.get(`${film}/v2/movie/new_movies`)
                 ]
                 // 获取电影排行榜数据
                 this.$axios.all(all_1).then(this.$axios.spread((a, b, c, d) => {
@@ -90,8 +90,8 @@
                     }))
                 }))
                 let all = [
-                    this.$axios.get(`${film.api_1}/v2/movie/in_theaters`),
-                    this.$axios.get(`${film.api_1}/v2/movie/coming_soon`)
+                    this.$axios.get(`${film}/v2/movie/in_theaters`),
+                    this.$axios.get(`${film}/v2/movie/coming_soon`)
                     // 获取电影热映，即将上映的数据
                 ]
                 this.$axios.all(all).then(this.$axios.spread((a, b) => {

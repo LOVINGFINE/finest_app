@@ -54,9 +54,9 @@ module.exports = {
               changeOrigin: true, 
               secure: false,          // 设置支持https协议的代理
             },
-            '/api2': {
+            '/text': {
                 target: 'https://chapter2.zhuishushenqi.com/',
-                pathRewrite: {'^/api2' : ''},
+                pathRewrite: {'^/text' : ''},
                 changeOrigin: true, 
                 secure: false,          // 设置支持https协议的代理
               }

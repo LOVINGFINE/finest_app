@@ -90,8 +90,10 @@
       methods: {
          getText(i) {
             let link = encodeURIComponent(this.list[i].link)
-            this.$axios.get(`/api2/chapter/${link}`).then(res => {
-               this.text = res.data.chapter.cpContent.split('\n')
+            this.$axios.get(`/text/chapter/${link}`).then(res => {
+               console.log(res);
+               
+               this.text = res.data.chapter.body.split('\n')
                this.title = res.data.chapter.title
              
                this.show = true
